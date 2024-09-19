@@ -178,7 +178,7 @@ Widget _buildDetailedListItem(dynamic item, String category, Color color) {
       case 'Agents':
         if (item is Agent) {
           return Text(
-            'Created: ${_formatDate(item.createdAt)}',
+            'Created: ${_formatDate(item.createdAt!)}',
             style: const TextStyle(fontSize: 12, fontStyle: FontStyle.italic),
           );
         }

@@ -29,7 +29,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
       final userRole = await ref.read(authServiceProvider).getUserRole();
       log('User role after login: $userRole');
 
-      if (!mounted) return; // Now 'mounted' is available
+      if (!mounted) return;
 
       if (widget.isAdminOnly) {
         if (userRole == 'admin' || userRole == 'super_admin') {

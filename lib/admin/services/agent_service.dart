@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../../agents/models/agent_model.dart';
 
@@ -14,11 +16,26 @@ class AgentService {
   }
 
   Future<void> addAgent(Agent agent) async {
-    await _supabase.from('agents').insert({
-      'name': agent.name,
-      'email': agent.email,
-      'created_at': agent.createdAt.toIso8601String(),
-    });
+    try{
+      final authResponse = await _supabase.auth.signUp(email: agent.email , password: agent.name);
+      if(authResponse.user == null){
+        throw Exception('Failed to create agent account');
+      }
+
+      await _supabase.from('agents').insert({
+        'user_id': authResponse.user!.id,
+        'name': agent.name,
+        'email': agent.email,
+        'created_at': DateTime.now().toIso8601String(),
+      });
+
+    }catch(e){
+      log("Error Occured $e");
+      if(e is AuthException){
+
+      }
+      rethrow;
+    }
   }
 
   Future<void> deleteAgent(String agentId) async {

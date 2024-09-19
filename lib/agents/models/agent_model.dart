@@ -1,14 +1,14 @@
 class Agent {
-  final String id;
+  final String? id;
   final String name;
   final String email;
-  final DateTime createdAt;
+  final DateTime? createdAt;
 
   Agent({
-    required this.id,
+    this.id,
     required this.name,
     required this.email,
-    required this.createdAt,
+    this.createdAt,
   });
 
   factory Agent.fromJson(Map<String, dynamic> json) {
