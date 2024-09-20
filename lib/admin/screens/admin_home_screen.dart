@@ -42,7 +42,7 @@ class AdminHomeScreen extends ConsumerWidget {
             padding: const EdgeInsets.all(16),
             sliver: SliverGrid(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
+                crossAxisCount: 3,
                 childAspectRatio: 0.8,
                 crossAxisSpacing: 16,
                 mainAxisSpacing: 16,
@@ -50,7 +50,7 @@ class AdminHomeScreen extends ConsumerWidget {
               delegate: SliverChildListDelegate([
                 _buildAnimatedCard(context, 'Admins', admins, '/admin/manage-admins', Icons.admin_panel_settings, Colors.blue),
                 _buildAnimatedCard(context, 'Agents', agents, '/admin/manage-agents', Icons.support_agent, Colors.green),
-                _buildAnimatedCard(context, 'Campus Locations', locations, '/admin/manage-locations', Icons.location_on, Colors.orange),
+                _buildAnimatedCard(context, 'Locations', locations, '/admin/manage-locations', Icons.location_on, Colors.orange),
                 _buildAnimatedCard(context, 'Users', users, '/admin/manage-users', Icons.people, Colors.purple),
               ]),
             ),
@@ -183,7 +183,7 @@ Widget _buildDetailedListItem(dynamic item, String category, Color color) {
           );
         }
         break;
-      case 'Campus Locations':
+      case 'Locations':
         if (item is Location) {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,

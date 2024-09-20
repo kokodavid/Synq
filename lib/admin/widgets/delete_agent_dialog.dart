@@ -56,7 +56,7 @@ class _DeleteAgentDialogState extends ConsumerState<DeleteAgentDialog> {
   }
 
   Future<void> _deleteAgent() async {
-    setState(() => _isDeleting = true);
+   
     
     try {
       final agentService = ref.read(agentServiceProvider);
@@ -78,9 +78,7 @@ class _DeleteAgentDialogState extends ConsumerState<DeleteAgentDialog> {
         ));
       }
     } finally {
-      if (mounted) {
-        setState(() => _isDeleting = false);
-      }
+      
     }
   }
 }

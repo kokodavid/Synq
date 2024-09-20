@@ -25,6 +25,7 @@ class MyApp extends ConsumerWidget {
     return MaterialApp.router(
       title: kIsWeb ? 'Admin Portal' : 'Synq',
       theme: ThemeData(primarySwatch: Colors.blue),
+      debugShowCheckedModeBanner: false,
       routerConfig: router,
     );
   }
