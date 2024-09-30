@@ -12,7 +12,7 @@ final nameControllerProvider = Provider.autoDispose((ref) => TextEditingControll
 final emailControllerProvider = Provider.autoDispose((ref) => TextEditingController());
 
 class AddAgentDialog extends ConsumerWidget {
-  const AddAgentDialog({Key? key}) : super(key: key);
+  const AddAgentDialog({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

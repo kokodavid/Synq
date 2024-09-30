@@ -61,7 +61,6 @@ class _DeleteAgentDialogState extends ConsumerState<DeleteAgentDialog> {
     try {
       final agentService = ref.read(agentServiceProvider);
       await agentService.deleteAgent(widget.agent.id!);
-      ref.refresh(agentsProvider);
       
       if (mounted) {
         Navigator.pop(context);

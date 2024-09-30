@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:synq/helpers/utils/colors.dart';
 import 'package:synq/router.dart';
 
 void main() async{
@@ -16,7 +17,7 @@ void main() async{
 }
 
 class MyApp extends ConsumerWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -24,8 +25,10 @@ class MyApp extends ConsumerWidget {
     
     return MaterialApp.router(
       title: kIsWeb ? 'Admin Portal' : 'Synq',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: GlobalThemeData.lightThemeData,
       debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.light,
+      darkTheme: GlobalThemeData.darkThemeData,
       routerConfig: router,
     );
   }
