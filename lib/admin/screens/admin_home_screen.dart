@@ -12,7 +12,7 @@ import '../providers/admin_providers.dart';
 import '../providers/users_provider.dart';
 
 class AdminHomeScreen extends ConsumerWidget {
-  const AdminHomeScreen({Key? key}) : super(key: key);
+  const AdminHomeScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

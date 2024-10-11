@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:synq/admin/providers/agent_providers.dart';
 import 'package:synq/agents/models/agent_model.dart';
-import 'package:synq/helpers/utils/helpers.dart';
+import 'package:synq/helpers/helpers.dart';
 
 final isLoadingProvider = StateProvider.autoDispose<bool>((ref) => false);
 
@@ -87,7 +87,6 @@ class AddAgentDialog extends ConsumerWidget {
             email: emailController.text,
           ),
         );
-        ref.refresh(agentsProvider);
         
         Navigator.pop(context);
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(

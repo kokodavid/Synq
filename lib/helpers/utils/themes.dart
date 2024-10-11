@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class GlobalThemeData {
   //Brand Colors
@@ -10,21 +11,34 @@ class GlobalThemeData {
   static const Color lightGray = Color(0xFFE0E0E0);
   static const Color white = Color(0xFFFFFFFF);
 
-  static ThemeData themeData(ColorScheme colorScheme, Color focusColor) {
+  static ThemeData themeData(ColorScheme colorScheme, Color focusColor, TextTheme textTheme) {
     return ThemeData(
         colorScheme: colorScheme,
+        fontFamily: 'Roboto',
         focusColor: focusColor,
         canvasColor: colorScheme.surface,
         scaffoldBackgroundColor: colorScheme.surface,
+        textTheme: textTheme,
         highlightColor: Colors.transparent);
   }
+
+
+
 
   static final Color _lightFocusColor = Colors.black.withOpacity(0.12);
   static final Color _darkFocusColor = Colors.white.withOpacity(0.12);
 
   static ThemeData lightThemeData =
-      themeData(lightColorScheme, _lightFocusColor);
-  static ThemeData darkThemeData = themeData(darkColorScheme, _darkFocusColor);
+      themeData(lightColorScheme, _lightFocusColor,textTheme);
+  static ThemeData darkThemeData = themeData(darkColorScheme, _darkFocusColor,textTheme);
+
+  static final textTheme = TextTheme(
+    bodySmall: GoogleFonts.roboto(fontSize: 16,fontWeight: FontWeight.normal,color: Colors.black),
+    bodyMedium: GoogleFonts.roboto(fontSize: 18,fontWeight: FontWeight.w700,color: Colors.black),
+    bodyLarge: GoogleFonts.roboto(fontSize: 21,fontWeight: FontWeight.w700,color: Colors.black)
+
+
+  );
 
   static const ColorScheme lightColorScheme = ColorScheme(
     primary: primaryPurple,
