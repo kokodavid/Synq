@@ -15,9 +15,13 @@ class CheckItem extends StatelessWidget {
           FontAwesomeIcons.circleCheck,
           color: Colors.green,
         ),
-        Text(
-          Strings.needAccountItem1,
-          style: Theme.of(context).textTheme.bodySmall,
+        const SizedBox(width: 4,),
+        Expanded(
+          child: Text(
+            Strings.needAccountItem1,
+            style: Theme.of(context).textTheme.bodySmall,
+            textAlign: TextAlign.center,
+          ),
         )
       ],
     );

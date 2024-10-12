@@ -47,7 +47,7 @@ class GlobalThemeData {
     onSecondary: white,
     error: Colors.redAccent,
     onError: white,
-    surface: lightGray,
+    surface: white,
     onSurface: darkGray,
     brightness: Brightness.light,
   );

@@ -43,6 +43,7 @@ dependencies:
   flutter_native_splash: ^2.4.1
   google_fonts: ^6.2.1
   font_awesome_flutter: ^10.7.0
+  icons_plus: ^5.0.0
 
 dev_dependencies:
   flutter_test:
@@ -89,8 +90,7 @@ flutter:
         - asset: assets/fonts/Roboto-Regular.ttf
         - asset: assets/fonts/Roboto-Bold.ttf
         - asset: assets/fonts/Roboto-Medium.ttf
-        - asset: assets/fonts/Roboto-italic.ttf
-          style: italic
+       
   
 flutter_native_splash:
   android: true
