@@ -8,19 +8,22 @@ class CheckItem extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+   Widget build(BuildContext context) {
     return Row(
       children: [
         const Icon(
           FontAwesomeIcons.circleCheck,
           color: Colors.green,
         ),
-        const SizedBox(width: 4,),
+        const SizedBox(width: 5,),
         Expanded(
-          child: Text(
-            Strings.needAccountItem1,
-            style: Theme.of(context).textTheme.bodySmall,
-            textAlign: TextAlign.center,
+          child: Container(
+            margin: const EdgeInsets.only(top: 5),
+            child: Text(
+              Strings.needAccountItem1,
+              style: Theme.of(context).textTheme.bodySmall,
+              textAlign: TextAlign.center,
+            ),
           ),
         )
       ],

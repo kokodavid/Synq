@@ -1,4 +1,4 @@
-package com.example.synq
+package com.giglab.unisynq
 
 import io.flutter.embedding.android.FlutterActivity
 
