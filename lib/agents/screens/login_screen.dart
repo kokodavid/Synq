@@ -2,10 +2,13 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:icons_plus/icons_plus.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:synq/agents/services/auth_service.dart';
 import 'package:synq/helpers/utils/strings.dart';
 import 'package:synq/helpers/utils/themes.dart';
+import 'package:synq/users/providers/auth_provider.dart';
 import 'package:synq/users/widgets/checker_item.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
@@ -88,14 +91,15 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   Container(
                     margin: const EdgeInsets.only(bottom: 20),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed:()=> ref.read(googleSignInProvider),
                       style: ElevatedButton.styleFrom(
                         foregroundColor: Colors.black87,
                         backgroundColor: Colors.white,
                         elevation: 1,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(4),
-                          side: const BorderSide(color: GlobalThemeData.darkGray),
+                          side:
+                              const BorderSide(color: GlobalThemeData.darkGray),
                         ),
                         padding: const EdgeInsets.symmetric(
                             horizontal: 16, vertical: 12),
@@ -163,3 +167,5 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     );
   }
 }
+
+
